@@ -13,6 +13,10 @@ const content = request(url, (error, response, body) => {
     if (err) {
       console.error(err);
     }
+    if (saveLocation){
+      console.log('file locaiton already exist')
+      return
+    }
     // file written successfully
     console.log(`Downloaded and saved ${wordCount} bytes to ${url}`);
   });
